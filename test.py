@@ -1,3 +1,3 @@
 from password_generator import password_generator
 
-password_generator(20)
+password_generator(12)

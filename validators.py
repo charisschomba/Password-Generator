@@ -1,50 +1,56 @@
 import string
 
-class validators:
 
+class Validators:
+
+    @staticmethod
     def long_enough(password):
-        'Password must be at least 6 characters'
+        """Password must be at least 6 characters"""
         check = len(password) >= 6
         if check:
             return check
         else:
-            return validators.long_enough.__doc__
+            return Validators.long_enough.__doc__
 
+    @staticmethod
     def short_enough(password):
-        'Password cannot be more than 32 characters'
+        """Password cannot be more than 32 characters"""
         if password > 32:
             return False
         return True
 
+    @staticmethod
     def has_lowercase(password):
-        'Password must contain a lowercase letter'
+        """Password must contain a lowercase letter"""
         check = len(set(string.ascii_lowercase).intersection(password)) > 0
         if check:
             return check
         else:
-            return validators.has_lowercase.__doc__
+            return Validators.has_lowercase.__doc__
 
+    @staticmethod
     def has_uppercase(password):
-        'Password must contain an uppercase letter'
+        """Password must contain an uppercase letter"""
         check = len(set(string.ascii_uppercase).intersection(password)) > 0
         if check:
             return check
         else:
-            return validators.has_uppercase.__doc__
+            return Validators.has_uppercase.__doc__
 
+    @staticmethod
     def has_numeric(password):
-        'Password must contain a digit'
+        """Password must contain a digit"""
         check = len(set(string.digits).intersection(password)) > 0
         if check:
             return check
         else:
-            return validators.has_numeric.__doc__
+            return Validators.has_numeric.__doc__
 
-
+    @staticmethod
     def has_special(password):
-        'Password must contain a special character'
+        """Password must contain a special character"""
         check = len(set(string.punctuation).intersection(password)) > 0
         if check:
             return check
         else:
-            return validators.has_special().__doc__
+            return Validators.has_special.__doc__
